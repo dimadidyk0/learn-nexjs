@@ -2,13 +2,16 @@ import React from 'react'
 
 const names: string[] = ['Jack', 'Patrick'];
 
-export default function Post() {
-  const chosenName: string = Math.random() >= 0.5 ? names[0] : names[1];
+type Props = {
+  author: string,
+  content: string,
+}
 
+export default function Post({ author, content}: Props) {
   return (
     <div>
-      <p>Name: {chosenName}</p>
-      <p>Description</p>
+      <p>{author}</p>
+      <p>{content}</p>
     </div>
   )
 }

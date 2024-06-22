@@ -6,7 +6,8 @@ export default function AwesomePage() {
   return (
     <main>
       <h1>NextJS is awesome</h1>
-      <Post />
+      <Post author="Mark" content="Content about Mark" />
+      <Post author="Cliff" content="Content about CLiff" />
     </main>
   )
 }
