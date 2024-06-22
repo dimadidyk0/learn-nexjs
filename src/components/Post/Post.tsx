@@ -10,9 +10,9 @@ type Props = {
 
 export default function Post({ author, content}: Props) {
   return (
-    <div className={s.root}>
+    <li className={s.root}>
       <p className={s.title}>{author}</p>
       <p className={s.content}>{content}</p>
-    </div>
+    </li>
   )
 }
