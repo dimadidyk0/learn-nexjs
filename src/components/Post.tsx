@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './Post.module.css';
 
 const names: string[] = ['Jack', 'Patrick'];
 
@@ -9,9 +10,9 @@ type Props = {
 
 export default function Post({ author, content}: Props) {
   return (
-    <div>
-      <p>{author}</p>
-      <p>{content}</p>
+    <div className={s.root}>
+      <p className={s.title}>{author}</p>
+      <p className={s.content}>{content}</p>
     </div>
   )
 }
