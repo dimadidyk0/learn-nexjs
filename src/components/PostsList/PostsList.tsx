@@ -1,20 +1,25 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 import Post from '@components/Post/Post';
 import AddPost from "@components/AddPost/AddPost";
+import PostInterface from "@/types/PostInterface";
 import s from './PostsList.module.css';
 
+
 export default function PostsList() {
+  const [posts, setPosts] = useState<PostInterface[]>([]);
+  const handleSubmit = (newPost: PostInterface) => {
+    setPosts([...posts, newPost])
+  }
+
   return (
     <>
-      <AddPost />
+      <AddPost onSubmit={handleSubmit} />
 
       <ul className={s.root}>
-        <Post author="Mark" content="Content about Mark" />
-        <Post author="Cliff" content="Content about CLiff" />
-        <Post author="Mark" content="Content about Mark" />
-        <Post author="Cliff" content="Content about CLiff" />
-        <Post author="Mark" content="Content about Mark" />
-        <Post author="Cliff" content="Content about CLiff" />
+        {posts.map(post => (
+          <Post key={post.content} author={post.author} content={post.content} />
+        ))}
       </ul>
     </>
   )
