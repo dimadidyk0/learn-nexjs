@@ -1,8 +1,6 @@
 import React from 'react'
 import s from './Post.module.css';
 
-const names: string[] = ['Jack', 'Patrick'];
-
 type Props = {
   author: string,
   content: string,
