@@ -16,7 +16,10 @@ export default function Home() {
         />
 
       </div>
-      <Link href={"/awesome"}>Awesome page</Link>
+
+      <p><Link href={"/meals"}>Meals page</Link></p>
+      <p><Link href={"/meals/share"}>Meals share page</Link></p>
+      <p><Link href={"/community"}>Community page</Link></p>
     </main>
   );
 }
