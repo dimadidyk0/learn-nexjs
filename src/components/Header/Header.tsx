@@ -13,17 +13,16 @@ export default function Header() {
   return (
     <header className={s.header}>
       <Link className={s.logo} href="/">
-        <Image src={logoImg} alt="A plate with a food on it" priority />
-        Next Level food
+        Learn-Pet
       </Link>
 
       <nav className={s.nav}> 
         <ul>
           <li>
-            <Link href={"/meals"} className={path.startsWith("/meals") ? s.active : ''}>Browse Meals</Link>
+            <Link href={"/hiragana"} className={path.startsWith("/hiragana") ? s.active : ''}>Hiragama</Link>
           </li>
           <li>
-            <Link href={"/community"}  className={path.startsWith("/community") ? s.active : ''}>Foodies Community</Link>
+            <Link href={"/katakana"}  className={path.startsWith("/katakana") ? s.active : ''}>Katakana</Link>
           </li>
         </ul>
       </nav>
