@@ -1,3 +1,24 @@
 .root {
   display: flex;
 }
+
+.main {
+  flex-grow: 1;
+  margin-right: 24px;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  flex-basis: 380px;
+}
+
+.main,
+.sidebar {
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  padding: 12px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -4,17 +4,15 @@ import s from "./page.module.css";
 export default function Home() {
   return (
     <Container>
-      <main>
-        <section className={s.section}>
-          <h2>Whar this app offers</h2>
-          <p>
-            This application can help you to learn Japanese
-          </p>
-        </section>
-      </main>
-      <aside>
-        Sidebar
-      </aside>
+      <div className={s.root}>
+        <main className={s.main}>
+          Here will be featerus soon
+        </main>
+
+        <aside className={s.sidebar}>
+          Here will be sidebar soon
+        </aside>
+      </div>
     </Container>
   );
 }
