@@ -1,13 +1,9 @@
-import Link from "next/link";
+import Container from "@/components/ui/Container/Container";
 import s from "./page.module.css";
 
 export default function Home() {
   return (
-    <>
-      <header className={s.header}>
-        Here will be some incredible header soon ⏳
-      </header>
-
+    <Container>
       <main>
         <section className={s.section}>
           <h2>Whar this app offers</h2>
@@ -16,6 +12,9 @@ export default function Home() {
           </p>
         </section>
       </main>
-    </>
+      <aside>
+        Sidebar
+      </aside>
+    </Container>
   );
 }
