@@ -1,0 +1,14 @@
+.character {
+  --size: 96px;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  font-size: 48px;
+}
+
+.character:first-of-type { margin-left: 0 }
+.character:last-of-type { margin-right: 0 }
