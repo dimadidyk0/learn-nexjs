@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import s from './CharacterToLearn.module.css';
+import { readme } from '@/services/readme';
 
 type Props = {
   character: string;
@@ -7,6 +10,6 @@ type Props = {
 
 export function CharacterToLearn({ character }: Props) {
   return (
-    <span className={s.character}>{character}</span>
+    <span onClick={() => readme(character)} className={s.character}>{character}</span>
   )
 };
