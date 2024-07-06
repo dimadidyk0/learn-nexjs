@@ -1,0 +1,70 @@
+[
+  [
+    { "symbol": "あ" },
+    { "symbol": "い" },
+    { "symbol": "う" },
+    { "symbol": "え" },
+    { "symbol": "お" }
+  ],
+  [
+    { "symbol": "か" },
+    { "symbol": "き" },
+    { "symbol": "く" },
+    { "symbol": "け" },
+    { "symbol": "こ" }
+  ],
+  [
+    { "symbol": "さ" },
+    { "symbol": "し" },
+    { "symbol": "す" },
+    { "symbol": "せ" },
+    { "symbol": "そ" }
+  ],
+  [
+    { "symbol": "た" },
+    { "symbol": "ち" },
+    { "symbol": "つ" },
+    { "symbol": "て" },
+    { "symbol": "と" }
+  ],
+  [
+    { "symbol": "な" },
+    { "symbol": "に" },
+    { "symbol": "ぬ" },
+    { "symbol": "ね" },
+    { "symbol": "の" }
+  ],
+  [
+    { "symbol": "は" },
+    { "symbol": "ひ" },
+    { "symbol": "ふ" },
+    { "symbol": "へ" },
+    { "symbol": "ほ" }
+  ],
+  [
+    { "symbol": "ま" },
+    { "symbol": "み" },
+    { "symbol": "む" },
+    { "symbol": "め" },
+    { "symbol": "も" }
+  ],
+  [
+    { "symbol": "や" },
+    { "symbol": "ゆ" },
+    { "symbol": "よ" }
+  ],
+  [
+    { "symbol": "ら" },
+    { "symbol": "り" },
+    { "symbol": "る" },
+    { "symbol": "れ" },
+    { "symbol": "ろ" }
+  ],
+  [
+    { "symbol": "わ" },
+    { "symbol": "を" }
+  ],
+  [
+    { "symbol": "ん" }
+  ]
+]
