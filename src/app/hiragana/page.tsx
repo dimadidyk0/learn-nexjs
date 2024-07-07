@@ -15,6 +15,7 @@ export default function HiraganaPage() {
             <CharacterToLearn
               key={character.symbol}
               character={character.symbol}
+              romaji={character.romaji}
             />
           ))}
         </div>

@@ -4,6 +4,7 @@
   width: var(--size);
   border: 1px solid whitesmoke;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 8px;
@@ -27,4 +28,10 @@
 
 .soundIcon:hover {
   opacity: 1;
+}
+
+.romaji {
+  color: darkgray;
+  font-size: 16px;
+  line-height: 20px;
 }

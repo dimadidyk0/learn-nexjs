@@ -1,10 +1,25 @@
 [
   [
-    { "symbol": "あ" },
-    { "symbol": "い" },
-    { "symbol": "う" },
-    { "symbol": "え" },
-    { "symbol": "お" }
+    {
+      "symbol": "あ",
+      "romaji": "a"
+    },
+    {
+      "symbol": "い",
+      "romaji": "i"
+    },
+    {
+      "symbol": "う",
+      "romaji": "u"
+    },
+    {
+      "symbol": "え",
+      "romaji": "e"
+    },
+    {
+      "symbol": "お",
+      "romaji": "o"
+    }
   ],
   [
     { "symbol": "か" },

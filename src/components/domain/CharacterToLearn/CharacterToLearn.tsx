@@ -7,13 +7,15 @@ import s from './CharacterToLearn.module.css';
 
 type Props = {
   character: string;
+  romaji: string;
 };
 
-export function CharacterToLearn({ character }: Props) {
+export function CharacterToLearn({ character, romaji }: Props) {
   return (
     <span className={s.character}>
-      {character}
       <VolumeUpIcon onClick={() => readme(character)} className={s.soundIcon} />
+      {character}
+      <span className={s.romaji}>{romaji}</span>
     </span>
   )
 };

@@ -5,4 +5,8 @@
 
 .row {
   display: flex;
+  justify-content: space-between;
+  /* TODO: change width to dynamic var */
+  width: 544px;
+  margin: 0 auto;
 }
