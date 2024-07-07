@@ -22,64 +22,151 @@
     }
   ],
   [
-    { "symbol": "か" },
-    { "symbol": "き" },
-    { "symbol": "く" },
-    { "symbol": "け" },
-    { "symbol": "こ" }
+    {
+      "symbol": "か",
+      "romaji": "ka"
+    },
+    {
+      "symbol": "き",
+      "romaji": "ki"
+    },
+    {
+      "symbol": "く",
+      "romaji": "ku"
+    },
+    {
+      "symbol": "け",
+      "romaji": "ke"
+    },
+    {
+      "symbol": "こ",
+      "romaji": "ko"
+    }
   ],
   [
-    { "symbol": "さ" },
-    { "symbol": "し" },
-    { "symbol": "す" },
-    { "symbol": "せ" },
-    { "symbol": "そ" }
+    { "symbol": "さ",
+      "romaji": "sa"
+    },
+    { "symbol": "し",
+      "romaji": "shi"
+    },
+    { "symbol": "す",
+      "romaji": "su"
+    },
+    { "symbol": "せ",
+      "romaji": "se"
+    },
+    { "symbol": "そ",
+      "romaji": "so"
+    }
   ],
   [
-    { "symbol": "た" },
-    { "symbol": "ち" },
-    { "symbol": "つ" },
-    { "symbol": "て" },
-    { "symbol": "と" }
+    { "symbol": "た",
+      "romaji": "ta"
+    },
+    { "symbol": "ち",
+      "romaji": "chi"
+    },
+    { "symbol": "つ",
+      "romaji": "tsu"
+    },
+    { "symbol": "て",
+      "romaji": "te"
+    },
+    { "symbol": "と",
+      "romaji": "to"
+    }
   ],
   [
-    { "symbol": "な" },
-    { "symbol": "に" },
-    { "symbol": "ぬ" },
-    { "symbol": "ね" },
-    { "symbol": "の" }
+    { "symbol": "な",
+      "romaji": "na"
+    },
+    { "symbol": "に",
+      "romaji": "ni"
+    },
+    { "symbol": "ぬ",
+      "romaji": "nu"
+    },
+    { "symbol": "ね",
+      "romaji": "ne"
+    },
+    { "symbol": "の",
+      "romaji": "no"
+    }
   ],
   [
-    { "symbol": "は" },
-    { "symbol": "ひ" },
-    { "symbol": "ふ" },
-    { "symbol": "へ" },
-    { "symbol": "ほ" }
+    { "symbol": "は",
+      "romaji": "ha"
+    },
+    { "symbol": "ひ",
+      "romaji": "hi"
+    },
+    { "symbol": "ふ",
+      "romaji": "fu"
+    },
+    { "symbol": "へ",
+      "romaji": "he"
+    },
+    { "symbol": "ほ",
+      "romaji": "ho"
+    }
   ],
   [
-    { "symbol": "ま" },
-    { "symbol": "み" },
-    { "symbol": "む" },
-    { "symbol": "め" },
-    { "symbol": "も" }
+    { "symbol": "ま",
+      "romaji": "ma"
+    },
+    { "symbol": "み",
+      "romaji": "mi"
+    },
+    { "symbol": "む",
+      "romaji": "mu"
+    },
+    { "symbol": "め",
+      "romaji": "me"
+    },
+    { "symbol": "も",
+      "romaji": "mo"
+    }
   ],
   [
-    { "symbol": "や" },
-    { "symbol": "ゆ" },
-    { "symbol": "よ" }
+    { "symbol": "や",
+      "romaji": "ya"
+    },
+    { "symbol": "ゆ",
+      "romaji": "yu"
+    },
+    { "symbol": "よ",
+      "romaji": "yo"
+    }
   ],
   [
-    { "symbol": "ら" },
-    { "symbol": "り" },
-    { "symbol": "る" },
-    { "symbol": "れ" },
-    { "symbol": "ろ" }
+    { "symbol": "ら",
+      "romaji": "ra"
+    },
+    { "symbol": "り",
+      "romaji": "ri"
+    },
+    { "symbol": "る",
+      "romaji": "ru"
+    },
+    { "symbol": "れ",
+      "romaji": "re"
+    },
+    { "symbol": "ろ",
+      "romaji": "ro"
+    }
   ],
   [
-    { "symbol": "わ" },
-    { "symbol": "を" }
+    { "symbol": "わ",
+      "romaji": "wa"
+    },
+    { "symbol": "を",
+      "romaji": "wo"
+    }
   ],
   [
-    { "symbol": "ん" }
+    { "symbol": "ん",
+      "romaji": "n"
+    }
   ]
 ]
