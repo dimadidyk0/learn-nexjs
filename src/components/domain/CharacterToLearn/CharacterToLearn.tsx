@@ -9,6 +9,7 @@ type Props = {
 };
 
 export function CharacterToLearn({ character }: Props) {
+
   return (
     <span onClick={() => readme(character)} className={s.character}>{character}</span>
   )
