@@ -1,12 +1,20 @@
+.root {
+  padding-bottom: 40px;
+}
+
 .title {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 24px;
+  text-align: center;
+  font-weight: normal;
+  text-transform: capitalize;
 }
 
 .grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column {

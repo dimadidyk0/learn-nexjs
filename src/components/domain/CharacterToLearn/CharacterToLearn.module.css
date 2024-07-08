@@ -11,7 +11,11 @@
   margin: 4px 0;
   font-size: 40px;
   position: relative;
-  background-color: #262626;
+  background-color: var(--collection-color-1);
+}
+
+.character:hover {
+  background-color: var(--collection-color-2);
 }
 
 .soundIcon {

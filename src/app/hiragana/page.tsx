@@ -6,8 +6,8 @@ import s from './page.module.css';
 
 export default function HiraganaPage() {
   return (
-    <main>
-      <h1 className={s.title}>Hiragana</h1>
+    <main className={s.root}>
+      <h1 className={s.title}>Hiragana chart</h1>
 
       <div className={s.grid}>
         {hiragana.map((row: HiraganaType[], index: number) => (
