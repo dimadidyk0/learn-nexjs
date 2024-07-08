@@ -8,13 +8,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 8px;
+  margin: 4px 0;
   font-size: 40px;
   position: relative;
+  background-color: #262626;
 }
-
-.character:first-of-type { margin-left: 0 }
-.character:last-of-type { margin-right: 0 }
 
 .soundIcon {
   position: absolute;

@@ -9,17 +9,19 @@ export default function HiraganaPage() {
     <main>
       <h1 className={s.title}>Hiragana</h1>
 
-      {hiragana.map((row: HiraganaType[], index: number) => (
-        <div className={s.row} key={index}>
-          {row.map((character: HiraganaType) => (
-            <CharacterToLearn
-              key={character.symbol}
-              character={character.symbol}
-              romaji={character.romaji}
-            />
-          ))}
-        </div>
-      ))}
+      <div className={s.grid}>
+        {hiragana.map((row: HiraganaType[], index: number) => (
+          <div className={s.column} key={index}>
+            {row.map((character: HiraganaType) => (
+              <CharacterToLearn
+                key={character.symbol}
+                character={character.symbol}
+                romaji={character.romaji}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
     </main>
   )
 }

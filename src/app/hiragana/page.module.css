@@ -1,12 +1,18 @@
 .title {
   font-size: 36px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
-.row {
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
   display: flex;
   justify-content: space-between;
-  /* TODO: change width to dynamic var */
-  width: 544px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  flex-direction: column;
+  margin: 0 4px;
 }
