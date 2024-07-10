@@ -3,6 +3,7 @@ import hiragana from '@/constants/hiragana.json';
 import { HiraganaType } from '@/types/hiragana';
 import { CharacterToLearn } from '../../components/domain/CharacterToLearn/CharacterToLearn';
 import s from './page.module.css';
+import TestBanner from '@/components/TestBanner/TestBanner';
 
 export default function HiraganaPage() {
   return (
@@ -22,6 +23,8 @@ export default function HiraganaPage() {
           </div>
         ))}
       </div>
+
+      <TestBanner />
     </main>
   )
 }
