@@ -24,7 +24,10 @@ export default function HiraganaPage() {
         ))}
       </div>
 
-      <TestBanner />
+      <TestBanner
+        title={"Let's check your Hiragana knowledges!"}
+        result={`${90}/${100}`}
+      />
     </main>
   )
 }
