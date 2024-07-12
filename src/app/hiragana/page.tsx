@@ -27,6 +27,7 @@ export default function HiraganaPage() {
       <TestBanner
         title={"Let's check your Hiragana knowledges!"}
         result={`${90}/${100}`}
+        id={'hiragana'}
       />
     </main>
   )
