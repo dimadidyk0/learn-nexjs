@@ -1,5 +1,9 @@
 import Link from 'next/link'
-import React from 'react'
+import React from 'react';
+import FullHeartIcon from '@mui/icons-material/Favorite';
+import EmptyHeartIcon from '@mui/icons-material/FavoriteBorder';
+import CloseIcon from '@mui/icons-material/Close';
+import s from './page.module.css';
 
 export default function ExamPage({ params }) {
   const exam = {
@@ -29,10 +33,16 @@ export default function ExamPage({ params }) {
       <p>Exam <b>{params.id}</b></p>
 
       <div>
-        <header>
-          <div>{exam.tries.used}/{exam.tries.total}</div>
-          <div>{exam.questions.answered}/{exam.questions.total}</div>
-          <button>X</button>
+        <header className={s.header}>
+          <div className={s.lives}>
+            <span>{new Array(exam.tries.total - exam.tries.used).fill(<FullHeartIcon />)}</span>
+            <span>{new Array(exam.tries.used).fill(<EmptyHeartIcon />)}</span>
+          </div>
+
+          <div className={s.answered}>Answered: {exam.questions.answered}/{exam.questions.total}</div>
+          <Link href={"/hiragana"} className={s.close}>
+            <CloseIcon />
+          </Link>
         </header>
 
         <div>
