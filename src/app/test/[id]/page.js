@@ -45,13 +45,13 @@ export default function ExamPage({ params }) {
           </Link>
         </header>
 
-        <div>
+        <div className={s.question}>
           {exam.questions.data[0].question}
         </div>
 
-        <div>
+        <div className={s.options}>
           {exam.questions.data[0].options.map(([option, isCorrect]) => (
-            <div key={option}>{option}</div>
+            <div className={s.option} key={option}>{option}</div>
           ))}
         </div>
       </div>
