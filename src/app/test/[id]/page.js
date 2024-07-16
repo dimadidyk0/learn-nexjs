@@ -1,11 +1,19 @@
+"use client";
 import Link from 'next/link'
-import React from 'react';
+import React, { useState } from 'react';
 import FullHeartIcon from '@mui/icons-material/Favorite';
 import EmptyHeartIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
 import s from './page.module.css';
 
 export default function ExamPage({ params }) {
+  const [answers, setAnswers] = useState({});
+  const handleSelectOption = (question, option) => {
+    setAnswers({
+      ...answers,
+      [question]: option,
+    })
+  }
   const exam = {
     tries: {
       total: 5,
@@ -27,6 +35,8 @@ export default function ExamPage({ params }) {
       ]
     },
   }
+
+  console.log(answers);
 
   return (
     <main>
@@ -51,7 +61,13 @@ export default function ExamPage({ params }) {
 
         <div className={s.options}>
           {exam.questions.data[0].options.map(([option, isCorrect]) => (
-            <div className={s.option} key={option}>{option}</div>
+            <div
+              key={option}
+              className={s.option}
+              onClick={() => handleSelectOption(exam.questions.data[0].question, option)}
+            >
+              {option}
+            </div>
           ))}
         </div>
       </div>
