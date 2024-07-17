@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link'
+import cx from 'classnames';
 import React, { useState } from 'react';
 import FullHeartIcon from '@mui/icons-material/Favorite';
 import EmptyHeartIcon from '@mui/icons-material/FavoriteBorder';
@@ -8,10 +9,13 @@ import s from './page.module.css';
 
 export default function ExamPage({ params }) {
   const [answers, setAnswers] = useState({});
-  const handleSelectOption = (question, option) => {
+  const handleSelectOption = (question, option, isCorrect) => {
     setAnswers({
       ...answers,
-      [question]: option,
+      [question]: {
+        option,
+        isCorrect,
+      },
     })
   }
   const exam = {
@@ -63,8 +67,11 @@ export default function ExamPage({ params }) {
           {exam.questions.data[0].options.map(([option, isCorrect]) => (
             <div
               key={option}
-              className={s.option}
-              onClick={() => handleSelectOption(exam.questions.data[0].question, option)}
+              className={cx(s.option, {
+                [s.correct]: answers[exam.questions.data[0].question].option === option && answers[exam.questions.data[0].question].isCorrect,
+                [s.incorrect]: answers[exam.questions.data[0].question].option === option && !answers[exam.questions.data[0].question].isCorrect,
+              })}
+              onClick={() => handleSelectOption(exam.questions.data[0].question, option, isCorrect)}
             >
               {option}
             </div>

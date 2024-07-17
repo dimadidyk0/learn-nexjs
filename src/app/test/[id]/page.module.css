@@ -61,6 +61,13 @@
   border-radius: 4px;
 }
 
+.correct {
+  background-color: var(--collection-color-9);
+}
+.incorrect {
+  background-color: var(--collection-color-8);
+}
+
 .option:hover {
   background-color: var(--collection-color-2);
 }
