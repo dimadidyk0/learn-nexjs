@@ -11,17 +11,35 @@ import s from './page.module.css';
 export default function ExamPage({ params }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [availableTries, setAvailableTries] = useState(exam.tries);
-  const [answers, setAnswers] = useState({});
-  // const handleSelectOption = (question, option, isCorrect) => {
-  //   setAnswers({
-  //     ...answers,
-  //     [question]: {
-  //       option,
-  //       isCorrect,
-  //     },
-  //   })
-  // }
-  // console.log(answers);
+  const [answers, setAnswers] = useState({
+    correct: 0,
+    total: 0,
+  });
+  const handleSelectOption = (index, option, isCorrect) => {
+    if (answers[index]) {
+      return;
+    }
+
+    setAnswers({
+      ...answers,
+      correct: answers.correct + Number(isCorrect),
+      total: answers.correct + 1,
+      [index]: {
+        option,
+        isCorrect,
+      },
+    });
+    if (exam.questions.length - 1 > currentQuestionIndex) {
+      setTimeout(() => {
+        setCurrentQuestionIndex(currentQuestionIndex + 1)
+      }, 750);
+    } else {
+      alert('THE END');
+    }
+  }
+  console.log(answers);
+
+  const currentQuestion = exam.questions[currentQuestionIndex];
 
   return (
     <main>
@@ -31,37 +49,40 @@ export default function ExamPage({ params }) {
         <header className={s.header}>
           <div className={s.lives}>
             <span>
-              {new Array(availableTries).fill(<FullHeartIcon />)}
+              {new Array(availableTries).fill(true).map((_, i) => <FullHeartIcon key={i} />)}
             </span>
             <span>
-              {new Array(exam.tries - availableTries).fill(<EmptyHeartIcon />)}
+              {new Array(exam.tries - availableTries).fill(true).map((_, i) => <EmptyHeartIcon key={i} />)}
             </span>
           </div>
 
-          <div className={s.answered}>Answered: {exam.questions.answered}/{exam.questions.total}</div>
+          <div className={s.answered}>
+            Answered: {answers.total}/{exam.questions.length}
+          </div>
+
           <Link href={"/hiragana"} className={s.close}>
             <CloseIcon />
           </Link>
         </header>
 
-        {/* <div className={s.question}>
-          {exam.questions.data[0].question}
-        </div> */}
+        <div className={s.question}>
+          {currentQuestion.title}
+        </div>
 
-        {/* <div className={s.options}>
-          {exam.questions.data[0].options.map(([option, isCorrect]) => (
+        <div className={s.options}>
+          {currentQuestion.options.map((option, index) => (
             <div
               key={option}
               className={cx(s.option, {
-                [s.correct]: answers[exam.questions.data[0].question].option === option && answers[exam.questions.data[0].question].isCorrect,
-                [s.incorrect]: answers[exam.questions.data[0].question].option === option && !answers[exam.questions.data[0].question].isCorrect,
+                [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
+                [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
               })}
-              onClick={() => handleSelectOption(exam.questions.data[0].question, option, isCorrect)}
+              onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
             >
               {option}
             </div>
           ))}
-        </div> */}
+        </div>
       </div>
     </main>
   )
