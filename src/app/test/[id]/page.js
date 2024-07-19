@@ -20,22 +20,20 @@ export default function ExamPage({ params }) {
       return;
     }
 
+    if (!isCorrect) {
+      setAvailableTries(availableTries - 1);
+    }
+
     setAnswers({
       ...answers,
       correct: answers.correct + Number(isCorrect),
-      total: answers.correct + 1,
+      total: answers.total + 1,
       [index]: {
         option,
         isCorrect,
       },
     });
-    if (exam.questions.length - 1 > currentQuestionIndex) {
-      setTimeout(() => {
-        setCurrentQuestionIndex(currentQuestionIndex + 1)
-      }, 750);
-    } else {
-      alert('THE END');
-    }
+    setTimeout(() => setCurrentQuestionIndex(currentQuestionIndex + 1), 500);
   }
   console.log(answers);
 
@@ -65,24 +63,28 @@ export default function ExamPage({ params }) {
           </Link>
         </header>
 
-        <div className={s.question}>
-          {currentQuestion.title}
-        </div>
-
-        <div className={s.options}>
-          {currentQuestion.options.map((option, index) => (
-            <div
-              key={option}
-              className={cx(s.option, {
-                [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
-                [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
-              })}
-              onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
-            >
-              {option}
+        {currentQuestionIndex < exam.questions.length ? (
+          <>
+            <div className={s.question}>
+              {currentQuestion.title}
             </div>
-          ))}
-        </div>
+
+            <div className={s.options}>
+              {currentQuestion.options.map((option, index) => (
+                <div
+                  key={option}
+                  className={cx(s.option, {
+                    [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
+                    [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
+                  })}
+                  onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
+          </>
+        ) : <div>test is done</div>} 
       </div>
     </main>
   )
