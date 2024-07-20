@@ -39,6 +39,10 @@ export default function ExamPage({ params }) {
 
   const currentQuestion = exam.questions[currentQuestionIndex];
 
+  if (availableTries <= 0) {
+    return <div>You lose</div>
+  }
+
   return (
     <main>
       <p>Exam <b>{params.id}</b></p>
