@@ -15,6 +15,14 @@ export default function ExamPage({ params }) {
     correct: 0,
     total: 0,
   });
+  const restart = () => {
+    setAnswers({
+      correct: 0,
+      total: 0,
+    });
+    setAvailableTries(exam.tries);
+    setCurrentQuestionIndex(0);
+  };
   const handleSelectOption = (index, option, isCorrect) => {
     if (answers[index]) {
       return;
@@ -40,7 +48,12 @@ export default function ExamPage({ params }) {
   const currentQuestion = exam.questions[currentQuestionIndex];
 
   if (availableTries <= 0) {
-    return <div>You lose</div>
+    return (
+      <div>
+        You lose
+        <button onClick={restart}>Start again</button>
+      </div>
+    )
   }
 
   return (
