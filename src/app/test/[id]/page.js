@@ -7,6 +7,7 @@ import EmptyHeartIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
 import { exam } from './exam';
 import s from './page.module.css';
+import { Box, Modal, Typography } from '@mui/material';
 
 export default function ExamPage({ params }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -46,15 +47,6 @@ export default function ExamPage({ params }) {
   console.log(answers);
 
   const currentQuestion = exam.questions[currentQuestionIndex];
-
-  if (availableTries <= 0) {
-    return (
-      <div>
-        You lose
-        <button onClick={restart}>Start again</button>
-      </div>
-    )
-  }
 
   return (
     <main>
@@ -103,6 +95,20 @@ export default function ExamPage({ params }) {
           </>
         ) : <div>test is done</div>} 
       </div>
+
+      <Modal
+        open={availableTries <= 0}
+        onClose={restart}
+      >
+        <Box className={s.modal}>
+          <Typography className={s.modalTitle} id="modal-modal-title" variant="h4" component="h2">
+            You almost did it
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Close modal to start again
+          </Typography>
+        </Box>
+      </Modal>
     </main>
   )
 }
