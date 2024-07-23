@@ -42,7 +42,10 @@ export default function ExamPage({ params }) {
         isCorrect,
       },
     });
-    setTimeout(() => setCurrentQuestionIndex(currentQuestionIndex + 1), 500);
+    setTimeout(
+      () => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, exam.questions.length - 1)),
+      500
+    );
   }
   console.log(answers);
 
@@ -72,28 +75,26 @@ export default function ExamPage({ params }) {
           </Link>
         </header>
 
-        {currentQuestionIndex < exam.questions.length ? (
-          <>
-            <div className={s.question}>
-              {currentQuestion.title}
-            </div>
+        <>
+          <div className={s.question}>
+            {currentQuestion.title}
+          </div>
 
-            <div className={s.options}>
-              {currentQuestion.options.map((option, index) => (
-                <div
-                  key={option}
-                  className={cx(s.option, {
-                    [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
-                    [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
-                  })}
-                  onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
-                >
-                  {option}
-                </div>
-              ))}
-            </div>
-          </>
-        ) : <div>test is done</div>} 
+          <div className={s.options}>
+            {currentQuestion.options.map((option, index) => (
+              <div
+                key={option}
+                className={cx(s.option, {
+                  [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
+                  [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
+                })}
+                onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
+              >
+                {option}
+              </div>
+            ))}
+          </div>
+        </>
       </div>
 
       <Modal
@@ -106,6 +107,20 @@ export default function ExamPage({ params }) {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Close modal to start again
+          </Typography>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={availableTries > 0 && answers.total === exam.questions.length}
+        onClose={restart}
+      >
+        <Box className={s.modal}>
+          <Typography className={s.modalTitle} id="modal-modal-title" variant="h4" component="h2">
+            You did it!
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Result: {answers.correct}/{exam.questions.length}. Close modal to start again
           </Typography>
         </Box>
       </Modal>

@@ -1,5 +1,5 @@
 export const exam = {
-  tries: 1,
+  tries: 2,
   questions: [
     {
       title: "あ",
