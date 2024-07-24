@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { exam } from './exam';
 import s from './page.module.css';
 import { Box, Modal, Typography } from '@mui/material';
+import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 
 export default function ExamPage({ params }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -75,26 +76,15 @@ export default function ExamPage({ params }) {
           </Link>
         </header>
 
-        <>
-          <div className={s.question}>
-            {currentQuestion.title}
-          </div>
-
-          <div className={s.options}>
-            {currentQuestion.options.map((option, index) => (
-              <div
-                key={option}
-                className={cx(s.option, {
-                  [s.correct]: answers?.[currentQuestionIndex]?.option === option && answers[currentQuestionIndex].isCorrect,
-                  [s.incorrect]: answers?.[currentQuestionIndex]?.option === option && !answers[currentQuestionIndex].isCorrect,
-                })}
-                onClick={() => handleSelectOption(currentQuestionIndex, option, index === currentQuestion.correctIndex)}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
-        </>
+        <TestQuestion
+          title={currentQuestion.title}
+          options={currentQuestion.options}
+          onSelect={handleSelectOption}
+          correctOption={answers?.[currentQuestionIndex]?.option}
+          isCorrect={answers?.[currentQuestionIndex]?.isCorrect}
+          correctIndex={currentQuestion.correctIndex}
+          currentIndex={currentQuestionIndex}
+        />
       </div>
 
       <Modal
