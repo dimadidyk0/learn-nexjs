@@ -25,8 +25,8 @@ export default function ExamPage({ params }) {
     setAvailableTries(exam.tries);
     setCurrentQuestionIndex(0);
   };
-  const handleSelectOption = (index, option, isCorrect) => {
-    if (answers[index]) {
+  const handleSelectOption = (option, isCorrect) => {
+    if (answers[currentQuestionIndex]) {
       return;
     }
 
@@ -38,7 +38,7 @@ export default function ExamPage({ params }) {
       ...answers,
       correct: answers.correct + Number(isCorrect),
       total: answers.total + 1,
-      [index]: {
+      [currentQuestionIndex]: {
         option,
         isCorrect,
       },
@@ -79,11 +79,9 @@ export default function ExamPage({ params }) {
         <TestQuestion
           title={currentQuestion.title}
           options={currentQuestion.options}
-          onSelect={handleSelectOption}
-          correctOption={answers?.[currentQuestionIndex]?.option}
-          isCorrect={answers?.[currentQuestionIndex]?.isCorrect}
           correctIndex={currentQuestion.correctIndex}
-          currentIndex={currentQuestionIndex}
+          onSelect={handleSelectOption}
+          answer={answers?.[currentQuestionIndex]}
         />
       </div>
 
