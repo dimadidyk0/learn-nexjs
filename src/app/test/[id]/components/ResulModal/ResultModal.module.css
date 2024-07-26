@@ -1,0 +1,20 @@
+
+.modal {
+  background-color: var(--collection-color-1);
+  height: fit-content;
+  width: 400px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 28px;
+  border-radius: 4px;
+  border: 1px solid var(--collection-color-3);
+  text-align: center;
+}
+
+.modalTitle {
+  color: var(--collection-color-8);
+}

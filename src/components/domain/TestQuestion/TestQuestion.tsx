@@ -18,7 +18,7 @@ export default function TestQuestion({
 }: Props) {
 
   return (
-    <div>
+    <>
       <div className={s.question}>
         {title}
       </div>
@@ -37,6 +37,6 @@ export default function TestQuestion({
           </div>
         ))}
       </div>
-    </div>
+    </>
   )
 }

@@ -9,6 +9,7 @@ import { exam } from './exam';
 import s from './page.module.css';
 import { Box, Modal, Typography } from '@mui/material';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
+import ResultModal from './components/ResulModal/ResultModal';
 
 export default function ExamPage({ params }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -85,33 +86,18 @@ export default function ExamPage({ params }) {
         />
       </div>
 
-      <Modal
-        open={availableTries <= 0}
+      <ResultModal
+        isOpen={availableTries <= 0}
         onClose={restart}
-      >
-        <Box className={s.modal}>
-          <Typography className={s.modalTitle} id="modal-modal-title" variant="h4" component="h2">
-            You almost did it
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Close modal to start again
-          </Typography>
-        </Box>
-      </Modal>
-
-      <Modal
-        open={availableTries > 0 && answers.total === exam.questions.length}
+        title={"You almost did it"}
+        description={"Close modal to start again"}
+      />
+      <ResultModal
+        isOpen={availableTries > 0 && answers.total === exam.questions.length}
         onClose={restart}
-      >
-        <Box className={s.modal}>
-          <Typography className={s.modalTitle} id="modal-modal-title" variant="h4" component="h2">
-            You did it!
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Result: {answers.correct}/{exam.questions.length}. Close modal to start again
-          </Typography>
-        </Box>
-      </Modal>
+        title={"You did it!"}
+        description={`Result: ${answers.correct}/${exam.questions.length}. Close modal to start again`}
+      />
     </main>
   )
 }
