@@ -8,6 +8,7 @@ import { exam } from './exam';
 import s from './page.module.css';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 import ResultModal from './components/ResulModal/ResultModal';
+import ExamHeader from './components/ExamHeader/ExamHeader';
 
 export default function ExamPage({ params }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -65,24 +66,12 @@ export default function ExamPage({ params }) {
       <p>Exam <b>{params.id}</b></p>
 
       <div>
-        <header className={s.header}>
-          <div className={s.lives}>
-            <span>
-              {new Array(availableTries).fill(true).map((_, i) => <FullHeartIcon key={i} />)}
-            </span>
-            <span>
-              {new Array(exam.tries - availableTries).fill(true).map((_, i) => <EmptyHeartIcon key={i} />)}
-            </span>
-          </div>
-
-          <div className={s.answered}>
-            Answered: {answers.total}/{exam.questions.length}
-          </div>
-
-          <Link href={"/hiragana"} className={s.close}>
-            <CloseIcon />
-          </Link>
-        </header>
+        <ExamHeader
+          availableTries={availableTries}
+          totalTries={exam.tries}
+          answeredAmount={answers.total}
+          totalAmount={exam.questions.length}
+        />
 
         <TestQuestion
           title={currentQuestion.title}

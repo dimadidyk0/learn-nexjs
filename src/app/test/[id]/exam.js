@@ -1,5 +1,5 @@
 export const exam = {
-  tries: 2,
+  tries: 3,
   questions: [
     {
       title: "あ",
@@ -10,6 +10,16 @@ export const exam = {
       title: "い",
       options: ['u','i','e','ki'], 
       correctIndex: 1,
+    },
+    {
+      title: "う",
+      options: ['a','u','e','fu'], 
+      correctIndex: 1,
+    },
+    {
+      title: "え",
+      options: ['su','ro','e','ni'], 
+      correctIndex: 2,
     },
     {
       title: "か",
