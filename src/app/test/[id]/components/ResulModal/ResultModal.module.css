@@ -18,3 +18,25 @@
 .modalTitle {
   color: var(--collection-color-8);
 }
+
+.button {
+  margin-top: 20px;
+  height: 48px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background: var(--collection-color-7);
+  color: var(--collection-color-1);
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  opacity: 1;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

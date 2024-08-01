@@ -45,10 +45,10 @@ export default function ExamPage({ params }) {
         isCorrect,
       },
     });
-    setTimeout(
-      () => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, exam.questions.length - 1)),
-      500
-    );
+      setTimeout(
+        () => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, exam.questions.length - 1)),
+        isCorrect ? 500 : 1500
+      );
   }
 
   useEffect(() => {
@@ -58,7 +58,6 @@ export default function ExamPage({ params }) {
   }, [setIsModalOpen, availableTries, answers.total])
 
   const currentQuestion = exam.questions[currentQuestionIndex];
-
   const isSuccessfullyDone = availableTries > 0 && answers.total === exam.questions.length;
 
   return (

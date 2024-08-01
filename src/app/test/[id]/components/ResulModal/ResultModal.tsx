@@ -2,6 +2,7 @@
 import React from 'react';
 import { Box, Modal, Typography } from '@mui/material';
 import s from './ResultModal.module.css';
+import Link from 'next/link';
 
 export default function ResultModal({ isOpen, onClose, title, description }) {
   return (
@@ -16,6 +17,7 @@ export default function ResultModal({ isOpen, onClose, title, description }) {
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           {description}
         </Typography>
+        <Link className={s.button} href={`/hiragana`}>Go home</Link>
       </Box>
     </Modal>
   )
