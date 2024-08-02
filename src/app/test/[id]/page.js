@@ -1,11 +1,6 @@
 "use client";
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
-import FullHeartIcon from '@mui/icons-material/Favorite';
-import EmptyHeartIcon from '@mui/icons-material/FavoriteBorder';
-import CloseIcon from '@mui/icons-material/Close';
 import { exam } from './exam';
-import s from './page.module.css';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 import ResultModal from './components/ResulModal/ResultModal';
 import ExamHeader from './components/ExamHeader/ExamHeader';
