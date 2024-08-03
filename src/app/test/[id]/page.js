@@ -80,7 +80,7 @@ export default function ExamPage({ params }) {
         isOpen={isModalOpen}
         onClose={restart}
         title={isSuccessfullyDone ? "You did it!" : "You almost did it"}
-        description={`Result: ${answers.correct}/${exam.questions.length}. Close modal to start again`}
+        description={`Result: ${answers.correct}/${exam.questions.length}. Click outside to start again`}
       />
     </main>
   )

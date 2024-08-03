@@ -22,6 +22,11 @@ export const exam = {
       correctIndex: 2,
     },
     {
+      title: "お",
+      options: ['a','o','wa','no'], 
+      correctIndex: 1,
+    },
+    {
       title: "か",
       options: ['a','su','o','ka'], 
       correctIndex: 3,
