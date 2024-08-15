@@ -6,7 +6,14 @@ import CloseIcon from '@mui/icons-material/Close';
 import s from './ExamHeader.module.css';
 import { buildEmptyArray } from '../../../../../utils';
 
-export default function ExamHeader({ availableTries, totalTries, answeredAmount, totalAmount }) {
+interface Props {
+  availableTries: number;
+  totalTries: number;
+  answeredAmount: number;
+  totalAmount: number;
+}
+
+export default function ExamHeader({ availableTries, totalTries, answeredAmount, totalAmount }: Props) {
   return (
     <header className={s.header}>
       <div className={s.lives}>

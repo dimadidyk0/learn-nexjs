@@ -4,7 +4,14 @@ import { Box, Modal, Typography } from '@mui/material';
 import s from './ResultModal.module.css';
 import Link from 'next/link';
 
-export default function ResultModal({ isOpen, onClose, title, description }) {
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  description: string;
+}
+
+export default function ResultModal({ isOpen, onClose, title, description }: Props) {
   return (
     <Modal
       open={isOpen}
