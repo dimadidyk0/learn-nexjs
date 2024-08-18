@@ -5,11 +5,23 @@ import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 import ResultModal from './components/ResulModal/ResultModal';
 import ExamHeader from './components/ExamHeader/ExamHeader';
 
-export default function ExamPage({ params }) {
+interface Props {
+  params: {
+    id: string;
+  };
+}
+export default function ExamPage({ params }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [availableTries, setAvailableTries] = useState(exam.tries);
-  const [answers, setAnswers] = useState({
+  const [answers, setAnswers] = useState<{
+    correct: number;
+    total: number;
+    [key: number]: {
+      isCorrect: boolean;
+      option: string;
+    };
+  }>({
     correct: 0,
     total: 0,
   });
@@ -22,7 +34,7 @@ export default function ExamPage({ params }) {
     setCurrentQuestionIndex(0);
     setIsModalOpen(false);
   };
-  const handleSelectOption = (option, isCorrect) => {
+  const handleSelectOption = (option: string, isCorrect: boolean) => {
     if (answers[currentQuestionIndex]) {
       return;
     }
