@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from 'react';
 import { exam } from './exam';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
@@ -40,24 +40,30 @@ export default function ExamPage({ params }) {
         isCorrect,
       },
     });
-      setTimeout(
-        () => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, exam.questions.length - 1)),
-        isCorrect ? 500 : 1500
-      );
-  }
+    setTimeout(
+      () =>
+        setCurrentQuestionIndex(
+          Math.min(currentQuestionIndex + 1, exam.questions.length - 1),
+        ),
+      isCorrect ? 500 : 1500,
+    );
+  };
 
   useEffect(() => {
     if (availableTries <= 0 || answers.total === exam.questions.length) {
       setIsModalOpen(true);
     }
-  }, [setIsModalOpen, availableTries, answers.total])
+  }, [setIsModalOpen, availableTries, answers.total]);
 
   const currentQuestion = exam.questions[currentQuestionIndex];
-  const isSuccessfullyDone = availableTries > 0 && answers.total === exam.questions.length;
+  const isSuccessfullyDone =
+    availableTries > 0 && answers.total === exam.questions.length;
 
   return (
     <main>
-      <p>Exam <b>{params.id}</b></p>
+      <p>
+        Exam <b>{params.id}</b>
+      </p>
 
       <div>
         <ExamHeader
@@ -79,9 +85,9 @@ export default function ExamPage({ params }) {
       <ResultModal
         isOpen={isModalOpen}
         onClose={restart}
-        title={isSuccessfullyDone ? "You did it!" : "You almost did it"}
+        title={isSuccessfullyDone ? 'You did it!' : 'You almost did it'}
         description={`Result: ${answers.correct}/${exam.questions.length}. Click outside to start again`}
       />
     </main>
-  )
+  );
 }

@@ -8,7 +8,7 @@ interface Props {
   onSelect: (b: string, c: boolean) => void;
   correctIndex: number;
   answer: { option: string; isCorrect: boolean };
-};
+}
 export default function TestQuestion({
   title,
   options,
@@ -16,12 +16,9 @@ export default function TestQuestion({
   correctIndex,
   answer,
 }: Props) {
-
   return (
     <>
-      <div className={s.question}>
-        {title}
-      </div>
+      <div className={s.question}>{title}</div>
 
       <div className={s.options}>
         {options.map((option, index) => (
@@ -38,5 +35,5 @@ export default function TestQuestion({
         ))}
       </div>
     </>
-  )
+  );
 }

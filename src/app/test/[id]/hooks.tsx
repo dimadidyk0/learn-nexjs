@@ -1,18 +1,17 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer } from 'react';
 
-enum EXAM_ACTION_TYPE {
-  OPEN_MODAL = 'OPEN_MODAL',
-  CLOSE_MODAL = 'CLOSE_MODAL',
-  SET_CURRENT_QUESTION_INDEX = 'SET_CURRENT_QUESTION_INDEX',
+enum ActionType {
+  Open,
+  Close,
 }
 
 interface ExamStateInterface {
-  isModalOpen: boolean,
-  currentQuestionIndex: number,
+  isModalOpen: boolean;
+  currentQuestionIndex: number;
 }
 
 interface ActionOpenModal {
-  type: EXAM_ACTION_TYPE.OPEN_MODAL;
+  type: ActionType.Open;
 }
 const initialState: ExamStateInterface = {
   isModalOpen: false,
@@ -21,11 +20,11 @@ const initialState: ExamStateInterface = {
 
 export function reducer(
   state: ExamStateInterface = initialState,
-  action: ActionOpenModal
+  action: ActionOpenModal,
 ): ExamStateInterface {
   const { type } = action;
 
-  if (type === EXAM_ACTION_TYPE.OPEN_MODAL) {
+  if (type === ActionType.Open) {
     return {
       ...state,
       isModalOpen: true,
