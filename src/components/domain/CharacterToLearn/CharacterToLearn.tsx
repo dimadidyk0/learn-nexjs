@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
@@ -17,5 +17,5 @@ export function CharacterToLearn({ character, romaji }: Props) {
       {character}
       <span className={s.romaji}>{romaji}</span>
     </span>
-  )
-};
+  );
+}

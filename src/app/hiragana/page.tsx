@@ -29,5 +29,5 @@ export default function HiraganaPage() {
         id={'hiragana'}
       />
     </main>
-  )
+  );
 }
