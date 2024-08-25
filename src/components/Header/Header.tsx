@@ -12,7 +12,7 @@ export default function Header() {
     <Container>
       <header className={s.header}>
         <Link className={s.logo} href="/">
-          Learn-Pet
+          DiDi-Quiz
         </Link>
 
         <nav className={s.nav}>

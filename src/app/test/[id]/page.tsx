@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { exam } from './exam';
+import { EXAM_BY_ID } from './exam';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 import ResultModal from './components/ResulModal/ResultModal';
 import ExamHeader from './components/ExamHeader/ExamHeader';
@@ -11,6 +11,7 @@ interface Props {
   };
 }
 export default function ExamPage({ params }: Props) {
+  const exam = EXAM_BY_ID[params?.id];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [availableTries, setAvailableTries] = useState(exam.tries);
