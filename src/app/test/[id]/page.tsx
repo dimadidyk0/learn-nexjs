@@ -1,9 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { EXAM_BY_ID } from './exam';
+import { ExamI } from '@/interfaces';
 import TestQuestion from '@/components/domain/TestQuestion/TestQuestion';
 import ResultModal from './components/ResulModal/ResultModal';
 import ExamHeader from './components/ExamHeader/ExamHeader';
+import { EXAM_BY_ID } from './exam';
 
 interface Props {
   params: {
@@ -11,7 +12,7 @@ interface Props {
   };
 }
 export default function ExamPage({ params }: Props) {
-  const exam = EXAM_BY_ID[params?.id];
+  const exam: ExamI = EXAM_BY_ID[params?.id];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [availableTries, setAvailableTries] = useState(exam.tries);
@@ -66,7 +67,7 @@ export default function ExamPage({ params }: Props) {
     if (availableTries <= 0 || answers.total === exam.questions.length) {
       setIsModalOpen(true);
     }
-  }, [setIsModalOpen, availableTries, answers.total]);
+  }, [setIsModalOpen, availableTries, answers.total, exam.questions.length]);
 
   const currentQuestion = exam.questions[currentQuestionIndex];
   const isSuccessfullyDone =

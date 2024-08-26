@@ -1,8 +1,8 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
   /* colors */
   --collection-color-1: #22223b; /* dark navy blue */
   --collection-color-2: #4a4e69; /* deep purple-blue */
@@ -16,7 +16,7 @@
   --collection-color-10: #8d99ae; /* soft gray-blue */
 
   --text-color: var(--collection-color-5);
-  
+
   --bg-color-primary: #0f0f0f;
 }
 

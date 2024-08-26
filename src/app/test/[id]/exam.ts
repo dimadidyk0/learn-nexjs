@@ -1,4 +1,6 @@
-export const hiraganaExam = {
+import { ExamI } from '@/interfaces';
+
+export const hiraganaExam: ExamI = {
   tries: 3,
   questions: [
     {
@@ -234,7 +236,7 @@ export const hiraganaExam = {
   ],
 };
 
-export const katakanaExam = {
+export const katakanaExam: ExamI = {
   tries: 3,
   questions: [
     {
@@ -470,7 +472,7 @@ export const katakanaExam = {
   ],
 };
 
-export const EXAM_BY_ID = {
+export const EXAM_BY_ID: { [key: string]: ExamI } = {
   katakana: katakanaExam,
   hiragana: hiraganaExam,
 };
