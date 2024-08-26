@@ -3,14 +3,14 @@
 import React from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { readme } from '@/services/readme';
-import s from './CharacterToLearn.module.css';
+import s from './Character.module.css';
 
 type Props = {
   character: string;
   romaji: string;
 };
 
-export function CharacterToLearn({ character, romaji }: Props) {
+export function Character({ character, romaji }: Props) {
   return (
     <span className={s.character}>
       <VolumeUpIcon onClick={() => readme(character)} className={s.soundIcon} />

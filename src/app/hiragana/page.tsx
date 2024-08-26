@@ -1,29 +1,14 @@
 import React from 'react';
 import hiragana from '@/constants/hiragana.json';
-import { CharacterType } from '@/types/character';
-import { CharacterToLearn } from '../../components/domain/CharacterToLearn/CharacterToLearn';
 import s from './page.module.css';
 import TestBanner from '@/components/TestBanner/TestBanner';
+import CharacterGrid from '@/components/domain/CharacterGrid/CharacterGrid';
 
 export default function HiraganaPage() {
   return (
     <main className={s.root}>
       <h1 className={s.title}>Hiragana chart</h1>
-
-      <div className={s.grid}>
-        {hiragana.map((row: CharacterType[], index: number) => (
-          <div className={s.column} key={index}>
-            {row.map((character: CharacterType) => (
-              <CharacterToLearn
-                key={character.symbol}
-                character={character.symbol}
-                romaji={character.romaji}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-
+      <CharacterGrid characters={hiragana} />
       <TestBanner
         title={"Let's check your Hiragana knowledges!"}
         id={'hiragana'}

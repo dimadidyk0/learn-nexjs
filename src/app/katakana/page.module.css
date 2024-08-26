@@ -9,19 +9,3 @@
   font-weight: normal;
   text-transform: capitalize;
 }
-
-.grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 28px;
-}
-
-.column {
-  display: flex;
-  justify-content: space-between;
-  /* margin: 0 auto; */
-  flex-direction: column;
-  margin: 0 4px;
-}
